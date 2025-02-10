@@ -11,7 +11,7 @@ class BalanceProvider extends ChangeNotifier {
   List<Map<String, dynamic>> get transactionHistory => _transactionHistory;
   Map<String, int> get ownedShares => _ownedShares;
 
-  /// This getter returns only those transaction records for stocks that are still owned.
+  // This getter returns only those transaction records for stocks that are still owned.
   List<Map<String, dynamic>> get portfolioTransactions {
     return _transactionHistory.where((transaction) {
       final String stockSymbol = transaction['stockSymbol'];
@@ -19,27 +19,26 @@ class BalanceProvider extends ChangeNotifier {
     }).toList();
   }
 
+  // Updates the balance - changes in every screen.
   void updateBalance(double newBalance) {
     _balance = newBalance;
     notifyListeners();
   }
 
+  // Method used when selling a stock. 
  void recordSale(String stockName, String stockSymbol, double revenue, int quantity) {
   if (_ownedShares.containsKey(stockSymbol)) {
     _ownedShares[stockSymbol] = _ownedShares[stockSymbol]! - quantity;
     if (_ownedShares[stockSymbol]! <= 0) {
       _ownedShares.remove(stockSymbol);
-    }
-
-    // Add a sale record to transaction history
-   
+    }   
 
     notifyListeners();
   }
 }
 
 
-
+// Method for purchasing a stock.
   void recordPurchase(String stockName, String stockSymbol, double pricePaid, int quantity) {
     // Find the business data by stock symbol
     Map<String, dynamic>? targetBusiness = popularBusinesses.firstWhere(
@@ -54,7 +53,7 @@ class BalanceProvider extends ChangeNotifier {
       _ownedShares[stockSymbol] = quantity;
     }
 
-    // Record the purchase in the transaction history
+    // Record the purchase in the transaction history - allows it to be displyed in the portfoliio screen.
     _transactionHistory.add({
       'stockName': stockName,
       'stockSymbol': stockSymbol,
