@@ -5,8 +5,9 @@ import 'package:stock_application/utils/business_data.dart';
 class BalanceProvider extends ChangeNotifier {
   double _balance = 25000.0;
   final List<Map<String, dynamic>> _transactionHistory = [];
-  final Map<String, int> _ownedShares = {}; // Track shares owned by stock symbol
+  final Map<String, int> _ownedShares = {}; // Track shares owned by stock symbol.
 
+  // Getter methods for the variables above.
   double get balance => _balance;
   List<Map<String, dynamic>> get transactionHistory => _transactionHistory;
   Map<String, int> get ownedShares => _ownedShares;
