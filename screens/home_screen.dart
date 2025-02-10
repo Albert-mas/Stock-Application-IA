@@ -101,6 +101,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       const SizedBox(height: 8),
+
+                      
 // Correct US representation of $ format. Including commas, symbol, and appropriate (2) decimal places when necessary.
                       Text(
                       NumberFormat.currency(locale: 'en_US', symbol: '\$', decimalDigits: 2).format(balanceProvider.balance),
