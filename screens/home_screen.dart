@@ -101,18 +101,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       const SizedBox(height: 8),
-
-Text(
-  NumberFormat.currency(locale: 'en_US', symbol: '\$', decimalDigits: 2)
-      .format(balanceProvider.balance),
-  style: const TextStyle(
-    fontSize: fontSize.title,
-    fontWeight: FontWeight.bold,
-  ),
-),
-
-                    ],
-                  ),
+// Correct US representation of $ format. Including commas, symbol, and appropriate (2) decimal places when necessary.
+                      Text(
+                      NumberFormat.currency(locale: 'en_US', symbol: '\$', decimalDigits: 2).format(balanceProvider.balance),
+                      style: const TextStyle(
+                        fontSize: fontSize.title,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                      ],
+                        ),
                   const SizedBox(height: 24),
                   Row(
                     children: [
