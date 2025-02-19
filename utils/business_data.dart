@@ -10,6 +10,8 @@ const List<Map<String, dynamic>> popularBusinesses = [
   {'name': 'Coca-Cola', 'symbol': 'KO', 'lightColor': '0xFFFF4D4D', 'darkColor': '0xFF600000'},
   {'name': 'McDonald\'s', 'symbol': 'MCD', 'lightColor': '0xFFFFE600', 'darkColor': '0xFF800000'},
   {'name': 'IBM', 'symbol': 'IBM', 'lightColor': '0xFF006699', 'darkColor': '0xFF003366'},
+  // more business data to follow.
+  
   {'name': 'Cisco', 'symbol': 'CSCO', 'lightColor': '0xFF66CCFF', 'darkColor': '0xFF003366'},
   {'name': 'Netflix', 'symbol': 'NFLX', 'lightColor': '0xFFE50914', 'darkColor': '0xFFB71C1C'},
   {'name': 'PepsiCo', 'symbol': 'PEP', 'lightColor': '0xFF005CBF', 'darkColor': '0xFF002244'},
