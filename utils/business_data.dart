@@ -1,7 +1,7 @@
 const List<Map<String, dynamic>> popularBusinesses = [
   {'name': 'Amazon', 'symbol': 'AMZN', 'lightColor': '0xFFFF9900', 'darkColor': '0xFF333300'},
   {'name': 'Microsoft', 'symbol': 'MSFT', 'lightColor': '0xFF5E9ED6', 'darkColor': '0xFF0A2761'},
-{'name': 'Nike', 'symbol': 'NKE', 'lightColor': '0xFFFFA07A', 'darkColor': '0xFF8B4513'},
+  {'name': 'Nike', 'symbol': 'NKE', 'lightColor': '0xFFFFA07A', 'darkColor': '0xFF8B4513'},
   {'name': 'Apple', 'symbol': 'AAPL', 'lightcColor': '0xFFBDBDBD', 'darkColor': '0xFF000000'},
   {'name': 'Google', 'symbol': 'GOOGL', 'lightColor': '0xFFF1C40F', 'darkColor': '0xFF1E8449'},
   {'name': 'Tesla', 'symbol': 'TSLA', 'lightColor': '0xFFF44336', 'darkColor': '0xFF9E1A1A'},
