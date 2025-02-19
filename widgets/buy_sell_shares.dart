@@ -67,7 +67,8 @@ class _BuySellSharesState extends State<BuySellShares> {
 
   void _processTransaction() {
     final int? shares = int.tryParse(_sharesController.text);
-
+    
+// Check if there is any input or if a negative or 0 number of shares are inputed.
     if (shares == null || shares <= 0) {
       ElegantNotification.error(
         title: const Text("Invalid Input"),
@@ -77,7 +78,8 @@ class _BuySellSharesState extends State<BuySellShares> {
     }
 
     final provider = Provider.of<BalanceProvider>(context, listen: false);
-
+    
+// Check that if the user wants to buy, that the user has enough money to afford the shares.
     if (isBuySelected) {
       if (_totalCost > provider.balance) {
         ElegantNotification.error(
@@ -101,7 +103,7 @@ class _BuySellSharesState extends State<BuySellShares> {
         ownedShares += shares;
       });
     } else {
-      // check if the user has enough shares to sell.
+      // check if the user has enough shares to sell. 
       if (shares > ownedShares) {
         ElegantNotification.error(
           title: const Text("Insufficient Shares"),
