@@ -101,6 +101,7 @@ class _BuySellSharesState extends State<BuySellShares> {
         ownedShares += shares;
       });
     } else {
+      // check if the user has enough shares to sell.
       if (shares > ownedShares) {
         ElegantNotification.error(
           title: const Text("Insufficient Shares"),
@@ -111,6 +112,7 @@ class _BuySellSharesState extends State<BuySellShares> {
 
       provider.updateBalance(provider.balance + _totalRevenue);
 
+      // records the sale
       provider.recordSale(
         widget.stockName,
         widget.stockSymbol,
@@ -118,6 +120,7 @@ class _BuySellSharesState extends State<BuySellShares> {
         shares,
       );
 
+      // updates the owned shares
       setState(() {
         ownedShares -= shares;
       });
