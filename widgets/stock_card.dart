@@ -30,6 +30,7 @@ class _StockCardState extends State<StockCard> {
     getPrice();
   }
 
+  // Fetching the stock price
   Future<void> getPrice() async {
     const apiKey = 'B3URQTOJYT9RK868';
     final url =
@@ -47,10 +48,10 @@ class _StockCardState extends State<StockCard> {
           stockPrice = double.parse(latestData['1. open']);
         });
       } else {
-        print('Failed to load stock price');
+        print('Failed');
       }
     } catch (e) {
-      print('Error fetching stock price: $e');
+      print('Error $e');
     }
   }
 
